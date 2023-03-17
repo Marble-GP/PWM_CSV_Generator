@@ -26,7 +26,7 @@ if __name__ == "__main__":
         
         if (T_rise+T_fall+2*T_dead) < T*x_ref[i] < (T-T_rise-T_fall-2*T_dead):
             OUT_HS.extend([[t+T*x_ref[i], 1], [t+T*x_ref[i]+T_fall, 0], [t+T-T_rise, 0], [t+T, 1]])
-            OUT_LS.extend([[t+T*x_ref[i]+T_dead, 0], [t+T*x_ref[i]+T_rise+T_dead, 1], [t+T-T_fall-T_dead, 1], [t+T, 0]])
+            OUT_LS.extend([[t+T*x_ref[i]+T_dead, 0], [t+T*x_ref[i]+T_rise+T_dead, 1], [t+T-T_fall-T_dead, 1], [t+T-T_dead, 0]])
         
         elif (T_rise+T_fall+2*T_dead) >= T*x_ref[i]:
             if len(OUT_HS) > 0:
