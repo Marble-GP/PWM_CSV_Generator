@@ -26,8 +26,8 @@ if __name__ == "__main__":
             i += 1
         
         if (T_trans+T_dead)/T < x_ref[i] < (T-T_trans-T_dead)/T:
-            OUT_HS.extend([[t+T*x_ref[i], 1], [t+T*x_ref[i]+T_fall, 0], [t+T-T_rise, 0], [t+T, 1]])
-            OUT_LS.extend([[t+T*x_ref[i]+T_dead, 0], [t+T*x_ref[i]+T_rise+T_dead, 1], [t+T-T_fall+T_dead, 1], [t+T, 0]])
+            OUT_HS.extend([[t+T*x_ref[i], 1], [t+T*x_ref[i]+T_fall, 0], [t+T-T_rise-T_dead, 0], [t+T, 1]])
+            OUT_LS.extend([[t+T*x_ref[i]+T_dead, 0], [t+T*x_ref[i]+T_rise+T_dead, 1], [t+T-T_fall, 1], [t+T, 0]])
         
         elif (T_trans+T_dead)/T >= x_ref[i]:
             if len(OUT_HS) > 0:
